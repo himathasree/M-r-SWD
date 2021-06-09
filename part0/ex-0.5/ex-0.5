@@ -1,1 +1,25 @@
+title Ex-0.5
 
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: spa.js
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "HTML is an easy language", date: "2019-05-23" }, ...]
+
+note over browser:
+The SPA is a Single Page App where 
+the contents of which are manipulated 
+with JavaScript that executes in the browser.
+A single-page application is a web application or website that 
+interacts with the user by dynamically rewriting the 
+current web page with new data from the web server, 
+instead of the default method of a web browser loading entire new pages.
+end note
