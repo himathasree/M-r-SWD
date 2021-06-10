@@ -1,1 +1,26 @@
+title EX : 0.6
 
+
+note over Browser:
+user inputs the data in the text
+field and then user clicks save 
+button in the single-page-app (SPA)
+and when entering new note information
+in text box and clicking on submit button 
+browser send request to server
+end note
+
+Browser->Server: HTTP POST   https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over Server:
+The POST requests to the new_note_spa
+contains both content and time :
+[{content: "asdf", date: "2021-05-27T11:04:38.536Z"}] 
+end note
+
+Server-->Browser: HTTP status code 201 created
+
+note over Browser:
+The browser does not redirects to another 
+page and sends no further HTTP requests
+end note
